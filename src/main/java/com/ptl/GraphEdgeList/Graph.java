@@ -28,4 +28,10 @@ public class Graph {
             System.out.println(graph.get(i).toStr());
         }
     }
+
+    public ArrayList<Integer> topoSortDFS(){
+        ArrayList<Integer> result = new ArrayList<>();
+
+        return result;
+    }
 }

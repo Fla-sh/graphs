@@ -32,13 +32,13 @@ public class Graph {
     }
 
     private void fillConnections(){
-        Integer endsAt = size - 1;
+        Integer startsAt = 1;
         for(int i = 0; i < size; i++){
             for(int j = 0; j < size; j++){
-                if(j <= endsAt) graph[i][j] = 1;
+                if(j >= startsAt) graph[i][j] = 1;
                 else graph[i][j] = 0;
             }
-            endsAt--;
+            startsAt++;
         }
     }
 }

@@ -9,9 +9,9 @@ public class App
     public static void main( String[] args )
     {
         // System.out.println( "Hello World!" );
-        Graph graph = new Graph(10, 0.95f);
+        Graph graph = new Graph(5, 0.95f);
         graph.print();
-        com.ptl.GraphEdgeList.Graph AGraph = new com.ptl.GraphEdgeList.Graph(graph);
-        AGraph.print();
+        com.ptl.GraphAdjacencyMatrix.Graph AGraph = new com.ptl.GraphAdjacencyMatrix.Graph(graph);
+        System.out.println(AGraph.topoSortBFS());
     }
 }
