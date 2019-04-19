@@ -11,7 +11,8 @@ public class App
         // System.out.println( "Hello World!" );
         Graph graph = new Graph(5, 0.95f);
         graph.print();
-        com.ptl.GraphAdjacencyMatrix.Graph AGraph = new com.ptl.GraphAdjacencyMatrix.Graph(graph);
+        com.ptl.GraphAdjacencyList.Graph AGraph = new com.ptl.GraphAdjacencyList.Graph(graph);
+        AGraph.print();
         System.out.println(AGraph.topoSortBFS());
     }
 }

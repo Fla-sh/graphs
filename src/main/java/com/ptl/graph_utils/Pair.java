@@ -18,6 +18,6 @@ public class Pair {
     }
 
     public String toStr(){
-        return first + " " + second;
+        return this.first + " " + this.second;
     }
 }

@@ -19,10 +19,14 @@ public class Graph {
          * function prints graph described by its class
          */
         for(int i = 0; i < size; i++){
-            System.out.println(Arrays.asList(graph[i]));
+                System.out.println(Arrays.asList(graph[i]));
         }
     }
 
+    /**
+     *
+     * @return size of outer array, so the maximal value of element
+     */
     public Integer getSize(){
         return size;
     }

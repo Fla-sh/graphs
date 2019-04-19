@@ -43,9 +43,11 @@ public class Graph {
             visited[i] = false;
         }
 
+        visited[startAt] = true;
         DFS(startAt);
 
         while(remainingToSort.size() != 0){
+            visited[remainingToSort.get(0)] = true;
             DFS(remainingToSort.get(0));
         }
         return topoSorted;
@@ -54,7 +56,7 @@ public class Graph {
     private void DFS(Integer vertex){
         Integer next = 0;
         while(next < size){
-            if(graph[vertex][next] == 1 && !visited[next]){
+            if(graph[next][vertex] == 1 && !visited[next]){
                 visited[next] = true;
                 DFS(next);
             }
@@ -66,21 +68,21 @@ public class Graph {
 
     public ArrayList<Integer> topoSortBFS(){
         topoSorted = new ArrayList<>();
-        Integer[] outRanks = new Integer[size];
+        Integer[] inRanks = new Integer[size];
 
         for(int i = 0; i < size; i++){
-            outRanks[i] = 0;
+            inRanks[i] = 0;
             for(int j = 0; j < size; j++){
-                outRanks[i] += graph[i][j];
+                inRanks[i] += graph[i][j];
             }
         }
 
         for(int i = 0; i < size; i++){
             for(int j = 0; j < size; j++){
-                if(outRanks[j] == 0){
-                    outRanks[j] = -1;
+                if(inRanks[j] == 0){
+                    inRanks[j] = -1;
                     for(int z = 0;  z < size; z++){
-                        outRanks[z] -= 1 * graph[z][j];
+                        inRanks[z] -= 1 * graph[z][j];
                     }
                     topoSorted.add(j);
                 }

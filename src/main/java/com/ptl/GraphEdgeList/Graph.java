@@ -3,13 +3,19 @@ package com.ptl.GraphEdgeList;
 import com.ptl.graph_utils.Pair;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Graph {
     private Integer size;
+    private Integer maxElementValue;
     private ArrayList<com.ptl.graph_utils.Pair> graph;
+    private ArrayList<Integer> topoSorted;
+    private ArrayList<Integer> remainingToSort;
+    private Boolean[] visited;
 
     public Graph(com.ptl.graph_utils.Graph toConvert){
         graph = new ArrayList<>();
+        maxElementValue = toConvert.getSize() - 1;
         convert(toConvert);
     }
 
@@ -17,9 +23,10 @@ public class Graph {
         Integer size = toConvert.getSize();
         for(int i = 0; i < size; i++){
             for(int j = 0; j < size; j++){
-                if(toConvert.getField(i, j) == 1) graph.add(new Pair(i, j));
+                if(toConvert.getField(i, j) == 1) graph.add(new Pair(j, i));
             }
         }
+        this.size = graph.size();
     }
 
     public void print(){
@@ -30,8 +37,59 @@ public class Graph {
     }
 
     public ArrayList<Integer> topoSortDFS(){
-        ArrayList<Integer> result = new ArrayList<>();
+        visited = new Boolean[maxElementValue + 1];
+        topoSorted = new ArrayList<>();
+        remainingToSort = new ArrayList<>();
+        Integer startAt = Math.round((maxElementValue + 1) / 4);
 
-        return result;
+        for (int i = 0; i < maxElementValue + 1; i++){
+            visited[i] = false;
+            remainingToSort.add(i);
+        }
+
+        visited[startAt] = true;
+        DFS(startAt);
+
+        while(remainingToSort.size() != 0){
+            visited[remainingToSort.get(0)] = true;
+            DFS(remainingToSort.get(0));
+        }
+
+        return topoSorted;
+    }
+
+    private void DFS(Integer next){
+        for(Pair node : graph){
+            if(node.first() == next && !visited[node.second()]){
+                visited[node.second()] = true;
+                DFS(node.second());
+            }
+        }
+        topoSorted.add(next);
+        remainingToSort.remove(next);
+    }
+
+    public ArrayList<Integer> topoSortBFS(){
+        Integer[] inRanks = new Integer[maxElementValue + 1];
+        topoSorted = new ArrayList<>();
+        Arrays.fill(inRanks, 0);
+        for(Pair node : graph){
+            inRanks[node.second()]++;
+        }
+
+        for(int i = 0; i < maxElementValue + 1; i++){
+            for(int j = 0; j < maxElementValue + 1; j++){
+                if(inRanks[j] == 0){
+                    inRanks[j] = -1;
+                    for(Pair node : graph){
+                        if(node.first() == j){
+                            inRanks[node.second()]--;
+                        }
+                    }
+                    topoSorted.add(j);
+                }
+            }
+        }
+        return topoSorted;
     }
 }
