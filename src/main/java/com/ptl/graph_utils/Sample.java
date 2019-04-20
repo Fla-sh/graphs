@@ -3,12 +3,12 @@ package com.ptl.graph_utils;
 import java.util.Arrays;
 import java.util.Random;
 
-public class Graph {
+public class Sample {
 
     private Integer[][] graph;
     private Integer size;
 
-    public Graph(Integer size, Float density){
+    public Sample(Integer size){
         this.size = size;
         graph = new Integer[size][size];
         fillConnections();

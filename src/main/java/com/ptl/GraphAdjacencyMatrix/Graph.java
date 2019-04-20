@@ -1,24 +1,32 @@
 package com.ptl.GraphAdjacencyMatrix;
 
+import com.ptl.graph_utils.Sample;
+import com.ptl.measurement.GraphRepresentation;
+
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Stack;
 
-public class Graph {
+public class Graph extends GraphRepresentation {
     private Integer[][] graph;
     private Integer size;
     private Boolean[] visited;
     private ArrayList<Integer> topoSorted;
     private ArrayList<Integer> remainingToSort;
 
-    public Graph(com.ptl.graph_utils.Graph toConvert){
+    public Graph(){
+    }
+
+    public String name(){
+        return "Adjacency Matrix";
+    }
+
+    public void load(Sample toConvert){
         size = toConvert.getSize();
         graph = new Integer[size][size];
-
         convert(toConvert);
     }
 
-    private void convert(com.ptl.graph_utils.Graph toConvert){
+    private void convert(Sample toConvert){
         for(int i = 0; i < size; i++){
             for(int j = 0; j < size; j++){
                 graph[i][j] = toConvert.getField(i, j);

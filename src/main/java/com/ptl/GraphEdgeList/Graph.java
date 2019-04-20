@@ -1,11 +1,13 @@
 package com.ptl.GraphEdgeList;
 
 import com.ptl.graph_utils.Pair;
+import com.ptl.graph_utils.Sample;
+import com.ptl.measurement.GraphRepresentation;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Graph {
+public class Graph extends GraphRepresentation {
     private Integer size;
     private Integer maxElementValue;
     private ArrayList<com.ptl.graph_utils.Pair> graph;
@@ -13,13 +15,20 @@ public class Graph {
     private ArrayList<Integer> remainingToSort;
     private Boolean[] visited;
 
-    public Graph(com.ptl.graph_utils.Graph toConvert){
+    public Graph(){
         graph = new ArrayList<>();
+    }
+
+    public String name(){
+        return "Edge List";
+    }
+
+    public void load(Sample toConvert){
         maxElementValue = toConvert.getSize() - 1;
         convert(toConvert);
     }
 
-    private void convert(com.ptl.graph_utils.Graph toConvert){
+    private void convert(Sample toConvert){
         Integer size = toConvert.getSize();
         for(int i = 0; i < size; i++){
             for(int j = 0; j < size; j++){

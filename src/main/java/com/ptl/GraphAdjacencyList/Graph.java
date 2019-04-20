@@ -1,6 +1,8 @@
 package com.ptl.GraphAdjacencyList;
 
-import java.lang.reflect.Array;
+import com.ptl.graph_utils.Sample;
+import com.ptl.measurement.GraphRepresentation;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -9,7 +11,7 @@ import java.util.HashMap;
  * LISTA NASTENIKOW
  */
 
-public class Graph {
+public class Graph extends GraphRepresentation {
     private HashMap<Integer, ArrayList<Integer>> graph;
     private Integer size;
     private Boolean[] visited;
@@ -17,9 +19,16 @@ public class Graph {
     private ArrayList<Integer> remainingToSort;
 
 
-    public Graph(com.ptl.graph_utils.Graph graphToconvert){
-        size = graphToconvert.getSize();
+    public Graph(){
         this.graph = new HashMap<>();
+    }
+
+    public String name(){
+        return "Adjacency List";
+    }
+
+    public void load(Sample graphToconvert){
+        size = graphToconvert.getSize();
         instanitateGraph();
         convert(graphToconvert);
     }
@@ -30,7 +39,7 @@ public class Graph {
         }
     }
 
-    private void convert(com.ptl.graph_utils.Graph toConvert){
+    private void convert(Sample toConvert){
         for(int i = 0; i < size; i++){
             for(int j = 0; j < size; j++){
                 if(toConvert.getField(i, j) == 1) graph.get(j).add(i);
