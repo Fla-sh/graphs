@@ -1,0 +1,25 @@
+\contentsline {section}{\numberline {1}Reprezentacja grafu przez macierz s\IeC {\k a}siedztwa}{2}
+\contentsline {subsection}{\numberline {1.1}Opis}{2}
+\contentsline {subsection}{\numberline {1.2}Z\IeC {\l }o\IeC {\.z}ono\IeC {\'s}c podstawowych operacji}{2}
+\contentsline {subsubsection}{\numberline {1.2.1}Sprawdzenie istnienia kraw\IeC {\k e}dzi}{2}
+\contentsline {subsubsection}{\numberline {1.2.2}Znalezienie wszystkich nastepnik\IeC {\'o}w}{2}
+\contentsline {subsection}{\numberline {1.3}Sortowanie topologiczne}{3}
+\contentsline {subsubsection}{\numberline {1.3.1}Sorotowanie za pomoc\IeC {\k a} algorytmu DFS}{3}
+\contentsline {subsubsection}{\numberline {1.3.2}Sortowanie za pomoca algorytmu BFS}{3}
+\contentsline {section}{\numberline {2}Reprezentacja grafu przez list\IeC {\k e} kraw\IeC {\k e}dzi}{4}
+\contentsline {subsection}{\numberline {2.1}Opis}{4}
+\contentsline {subsection}{\numberline {2.2}Z\IeC {\l }o\IeC {\.z}ono\IeC {\'s}\IeC {\'c} podstawowych operacji}{4}
+\contentsline {subsubsection}{\numberline {2.2.1}Sprawdzenie istnienia kraw\IeC {\k e}dzi}{4}
+\contentsline {subsection}{\numberline {2.3}Znalezienie wszytkich nast\IeC {\k e}pnik\IeC {\'o}w}{4}
+\contentsline {subsection}{\numberline {2.4}Sortowanie topologiczne}{4}
+\contentsline {subsubsection}{\numberline {2.4.1}Sortowanie za pomoc\IeC {\k a} algorytmu DFS}{5}
+\contentsline {subsubsection}{\numberline {2.4.2}Sortowanie za pomoc\IeC {\k a} algorytmu BFS}{5}
+\contentsline {section}{\numberline {3}Reprezentacja grafu przez list\IeC {\k e} nast\IeC {\k e}pnik\IeC {\'o}w}{6}
+\contentsline {subsection}{\numberline {3.1}Opis}{6}
+\contentsline {subsection}{\numberline {3.2}Z\IeC {\l }o\IeC {\.z}ono\IeC {\'s}\IeC {\'c} podstawowych operacji}{6}
+\contentsline {subsubsection}{\numberline {3.2.1}Sprawdzanie istnienia kraw\IeC {\k e}dzi}{6}
+\contentsline {subsubsection}{\numberline {3.2.2}Znalezienie wszystkich nast\IeC {\k e}pnik\IeC {\'o}w}{6}
+\contentsline {subsection}{\numberline {3.3}Sortowanie topologiczne}{6}
+\contentsline {subsubsection}{\numberline {3.3.1}Sortowanie za pomoc\IeC {\k a} algorytmu DFS}{7}
+\contentsline {subsubsection}{\numberline {3.3.2}Sortowanie za pomoc\IeC {\k a} algorytmu BFS}{7}
+\contentsline {section}{Oznaczenia}{8}
